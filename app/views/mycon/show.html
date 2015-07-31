@@ -1,0 +1,25 @@
+<html>
+
+<% if current_user %> 
+  hello<br>
+  <%= current_user.name %>
+  <br>
+  <%= link_to "signout", "/logout " %>
+  <br>
+<% else %>
+  please<br>
+  <%= link_to "Sign in with Twitter",  "/auth/twitter" %>         <br>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>        <br>
+  <%= link_to "Sign in with Google",   "/auth/google_oauth2" %>   <br>
+<% end %>
+
+<% flash.each do |name, msg| %>
+  <%= msg %>
+<% end %>
+
+<%= form_tag('/tweet') do %>
+  <%= submit_tag 'tweet' %>
+<% end %>
+
+</html>
+
