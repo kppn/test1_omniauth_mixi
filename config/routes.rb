@@ -6,6 +6,7 @@ Test1Omniauth::Application.routes.draw do
   match '/tweet', to: 'sessions#tweet', via: 'post'
   match '/auth/:provider/callback', to: 'sessions#create', via: 'get'
   match '/logout', to: 'sessions#destroy', via: 'get'
+  match '/auth/mixi/callback', to: 'sessions#create', via: 'get'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
